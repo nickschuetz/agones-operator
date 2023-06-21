@@ -143,13 +143,13 @@ Things to note:
 
 Example:
 ```bash
-make docker-build docker-push IMG=quay.io/agones-operator/agones:v1.30.0
+make docker-build docker-push IMG=quay.io/agones-operator/agones:v1.32.0
 ```
 
 ### Bundle the operator for use with [Operator Lifecycle Manager](https://docs.openshift.com/container-platform/4.12/operators/understanding/olm/olm-understanding-olm.html) (OLM)
 
 ```bash
-make bundle IMG=quay.io/agones-operator/agones:v1.30.0
+make bundle IMG=quay.io/agones-operator/agones:v1.32.0
 ```
 Fill in all the details. The output should be a `bundle` directory with the following contents
 
@@ -170,21 +170,21 @@ bundle
 
 Example:
 ```bash
-make bundle-build BUNDLE_IMG=quay.io/agones-operator/agones-operator:v1.30.0
+make bundle-build BUNDLE_IMG=quay.io/agones-operator/agones-operator:v1.32.0
 ```
 ```bash
-podman push quay.io/agones-operator/agones-operator:v1.30.0
+podman push quay.io/agones-operator/agones-operator:v1.32.0
 ```
 
 ## Deploy Operator on OpenShift
 
 ```bash
-operator-sdk run bundle -n agones-system quay.io/agones-operator/agones-operator:v1.30.0
+operator-sdk run bundle -n agones-system quay.io/agones-operator/agones-operator:v1.32.0
 ```
 
 The output should look like this:
 ```bash
-INFO[0004] Creating a File-Based Catalog of the bundle "quay.io/agones-operator/agones-operator:v1.30.0"
+INFO[0004] Creating a File-Based Catalog of the bundle "quay.io/agones-operator/agones-operator:v1.32.0"
 INFO[0005] Generated a valid File-Based Catalog
 INFO[0007] Created registry pod: quay-io-agones-operator-agones-operator-v1-30-0
 INFO[0007] Created CatalogSource: agones-operator-catalog
